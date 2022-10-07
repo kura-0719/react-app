@@ -3,15 +3,13 @@ import './App.css';
 
 function App() {
 
-  const testScope = (scope) => {
-    if (scope === 'function') {
-      var functionScope = '関数スコープ内なら参照どこからでも参照できます'
-    } else if (scope === 'block') {
-      let blockScope = 'ブロックスコープ内でしか参照できません'
-      console.log(blockScope)
-    }
+  const users = {
+    hoge: 'takumi'
   }
-  testScope('block')
+  const getUsername = (userId) => users[userId];
+
+  const username  = getUsername('hoge')
+  console.log(username)
 
   return (
     <div className="App">
