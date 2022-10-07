@@ -6,7 +6,9 @@ function App() {
   const users = {
     hoge: 'takumi'
   }
-  const getUsername = (userId) => users[userId];
+  const getUsername = (userId) => {
+    return users[userId]
+  }
 
   const username  = getUsername('hoge')
   console.log(username)
