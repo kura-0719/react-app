@@ -3,28 +3,19 @@ import './App.css';
 
 function App() {
 
-  // map()|新しい配列を作る  
-    const array = [1, 2, 4, 8];
-    const resultArray = array.map(x => x * 2)
-    console.log(resultArray)
-    // Array [2, 4, 8, 16]
-  
-    const object = {
-      "hoge": {text: "fuga"},
-      "foo":  {text: "bar"},
-      "fiz":  {text: "buzz"}
-    };
+  // filter()|条件に合う要素を抽出
+    const objectToArray = [
+      { id:"hoge", text: "fuga"},
+      { id: "foo",  text: "bar"},
+      { id: "fiz",  text: "buzz"}
+    ];
+    const result = objectToArray.filter(object => {
+      return object.id === 'hoge'
+    })
 
-    const objectToArray = Object.keys(object).map(key => {
-      const value = object[key]
-      // console.log(value)
-      value['id'] = key
-      // console.log(value)
-      return value
-    });
-
-    console.log(objectToArray)
-
+    console.log(result)
+    // Array[{id:"hoge": text: "fuga"}]
+    
   return (
     <div className="App">
       <header className="App-header">
