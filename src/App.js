@@ -3,7 +3,15 @@ import './App.css';
 
 function App() {
 
-  console.log("aaa")
+  const testScope = (scope) => {
+    if (scope === 'function') {
+      var functionScope = '関数スコープ内なら参照どこからでも参照できます'
+    } else if (scope === 'block') {
+      let blockScope = 'ブロックスコープ内でしか参照できません'
+    }
+    console.log(blockScope)
+  }
+  testScope('block')
 
   return (
     <div className="App">
