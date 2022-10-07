@@ -8,8 +8,8 @@ function App() {
       var functionScope = '関数スコープ内なら参照どこからでも参照できます'
     } else if (scope === 'block') {
       let blockScope = 'ブロックスコープ内でしか参照できません'
+      console.log(blockScope)
     }
-    console.log(blockScope)
   }
   testScope('block')
 
