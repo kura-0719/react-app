@@ -3,15 +3,27 @@ import './App.css';
 
 function App() {
 
-  const users = {
-    hoge: 'takumi'
-  }
-  const getUsername = (userId) => {
-    return users[userId]
-  }
+  // map()|新しい配列を作る  
+    const array = [1, 2, 4, 8];
+    const resultArray = array.map(x => x * 2)
+    console.log(resultArray)
+    // Array [2, 4, 8, 16]
+  
+    const object = {
+      "hoge": {text: "fuga"},
+      "foo":  {text: "bar"},
+      "fiz":  {text: "buzz"}
+    };
 
-  const username  = getUsername('hoge')
-  console.log(username)
+    const objectToArray = Object.keys(object).map(key => {
+      const value = object[key]
+      // console.log(value)
+      value['id'] = key
+      // console.log(value)
+      return value
+    });
+
+    console.log(objectToArray)
 
   return (
     <div className="App">
