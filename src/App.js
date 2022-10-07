@@ -3,18 +3,18 @@ import './App.css';
 
 function App() {
 
-  // filter()|条件に合う要素を抽出
+  // findIndex()|要素の何番目か知る
     const objectToArray = [
       { id:"hoge", text: "fuga"},
       { id: "foo",  text: "bar"},
       { id: "fiz",  text: "buzz"}
     ];
-    const result = objectToArray.filter(object => {
+    const index = objectToArray.findIndex(object => {
       return object.id === 'hoge'
     })
 
-    console.log(result)
-    // Array[{id:"hoge": text: "fuga"}]
+    console.log(index, objectToArray[index])
+    // 0, {id:"hoge": text: "fuga"}
     
   return (
     <div className="App">
