@@ -5,13 +5,12 @@ function App() {
 
   function confirmed(fn) {
     const input = window.prompt("実行しますか?");
-    if (input === "実行") {
-      fn();
-    }
+      fn(input);
   }
 
-  confirmed(function () {
-    console.log("リポジトリを削除")
+  confirmed(function (input) {
+    if (input === "実行")
+      console.log("リポジトリを削除")
   });
 
   return (
