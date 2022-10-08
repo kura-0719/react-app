@@ -8,6 +8,12 @@ function App() {
     return text.length <= 140;
   }
 
+  // 匿名（無名）関数
+  const isTweetable = function(text) {
+    return text.length <= 140;
+  }
+
+  
   function alertTweetable(text) {
     if (isTweetable(text)){
       alert("you can tweet!")
