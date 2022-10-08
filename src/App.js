@@ -9,6 +9,11 @@ function App() {
     console.log("フォロー解除");
   });
 
+  const foods = ["人参", "ジャガイモ", "玉ねぎ"];
+  foods.forEach(function(food) {
+    console.log(food);
+  });
+
   return (
     <div className="App">
       <header className="App-header">
