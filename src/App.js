@@ -3,21 +3,17 @@ import './App.css';
 
 function App() {
 
-  function unfollow() {
-    console.log("フォローを外しました");
-  }
-
-  function cancelTweet() {
-    console.log("ツイートをキャンセルしました");
-  }
-
   function confirmed(fn) {
-    if (window.confirm("実行しますか?")) {
+    const input = window.prompt("実行しますか?");
+    if (input === "実行") {
       fn();
     }
   }
 
-  confirmed(unfollow);
+  confirmed(function () {
+    console.log("リポジトリを削除")
+  });
+
   return (
     <div className="App">
       <header className="App-header">
