@@ -4,8 +4,8 @@ import './App.css';
 function App() {
 
   class Student {
-    constructor(name) {
-      this.name = name;
+    constructor(name) {   /* コンストラクタ */
+      this.name = name;   /* プロパティ */
     }
 
     avg(math, english) {
@@ -13,9 +13,9 @@ function App() {
     }
   }
 
-  let a001 = new Student("Sato");
+  let a001 = new Student("Sato");    /* インスタンス,　クラス */
   console.log(a001.name);
-  a001.avg(80, 70);
+  a001.avg(80, 70);                  /* メソッド */
 
   let a002 = new Student("Tanaka");
   console.log(a002.name);
