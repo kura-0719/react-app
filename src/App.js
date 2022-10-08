@@ -3,16 +3,23 @@ import './App.css';
 
 function App() {
 
-  let cal1 = function(x, y, z){
-    console.log(x + y + z)
-  }
-  cal1(5,3,8);
+  class Student {
+    constructor(name) {
+      this.name = name;
+    }
 
-  let cal2 = function(x, y, z){
-    return x + y + z;
+    avg(math, english) {
+      console.log((math + english) / 2)
+    }
   }
-  let result = cal2(10,5,8)
-  console.log(result)
+
+  let a001 = new Student("Sato");
+  console.log(a001.name);
+  a001.avg(80, 70);
+
+  let a002 = new Student("Tanaka");
+  console.log(a002.name);
+  a001.avg(20, 40);
     
   return (
     <div className="App">
