@@ -3,11 +3,17 @@ import './App.css';
 
 function App() {
 
-  // 変数について
-  const foo =document.getElementById("foo");
+  // 関数について
+  function isTweetable(text) {
+    return text.length <= 140;
+  }
 
-  const fooWidth = foo.offsetWidth;
-  const fooHeight = foo.offsetHeight;
+  function alertTweetable(text) {
+    if (isTweetable(text)){
+      alert("you can tweet!")
+    }
+  }
+  alertTweetable("foo")
   
   return (
     <div className="App">
