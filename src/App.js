@@ -3,18 +3,16 @@ import './App.css';
 
 function App() {
 
-  // findIndex()|要素の何番目か知る
-    const objectToArray = [
-      { id:"hoge", text: "fuga"},
-      { id: "foo",  text: "bar"},
-      { id: "fiz",  text: "buzz"}
-    ];
-    const index = objectToArray.findIndex(object => {
-      return object.id === 'hoge'
-    })
+  let cal1 = function(x, y, z){
+    console.log(x + y + z)
+  }
+  cal1(5,3,8);
 
-    console.log(index, objectToArray[index])
-    // 0, {id:"hoge": text: "fuga"}
+  let cal2 = function(x, y, z){
+    return x + y + z;
+  }
+  let result = cal2(10,5,8)
+  console.log(result)
     
   return (
     <div className="App">
