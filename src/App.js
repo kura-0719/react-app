@@ -3,24 +3,47 @@ import './App.css';
 
 function App() {
 
-  // 関数について
-  function isTweetable(text) {
-    return text.length <= 140;
-  }
-
-  // 匿名（無名）関数
-  const isTweetable = function(text) {
-    return text.length <= 140;
-  }
-
-  
-  function alertTweetable(text) {
-    if (isTweetable(text)){
-      alert("you can tweet!")
+  // コールバック関数について
+    // function 高階関数(コールバック関数) {
+    //   //処理
+    //   コールバック関数();
+    // }
+    
+  function bring(food){
+    if(/*手洗いが終えたら*/) {
+      //食材を持ってきてもらう処理
     }
   }
-  alertTweetable("foo")
+  function peer(food){
+    if(/*手洗いが終えたら*/) {
+      //食材の皮をむく処理
+    }
+  }
+  function cut(food){
+    if(/*手洗いが終えたら*/) {
+      //食材を切ってもらう処理
+    }
+  }
   
+  //高階関数を使った場合の処理
+  function washed(fn) {
+    if(/*手洗いが終えたら*/) {
+      fn(); //コールバック関数の処理
+    }
+  }
+
+  function bring(food){
+    //食材を持ってきてもらう処理
+  }
+  function peer(food){
+    //食材の皮をむく処理
+  }
+  function cut(food){
+    //食材を切ってもらう処理
+  }
+  washed(bring);
+
+
   return (
     <div className="App">
       <header className="App-header">
