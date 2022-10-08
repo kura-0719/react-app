@@ -4,22 +4,40 @@ import './App.css';
 function App() {
 
   class Student {
-    constructor(name) {   /* コンストラクタ */
-      this.name = name;   /* プロパティ */
+    constructor(name){
+      this.name = name;
+    }
+    cal_avg(data) {
+      let sum = 0;
+      for (let i = 0; i < data.length; i++){
+      sum += data[i];
+      }
+
+    let avg = sum / data.length;
+    return avg;
     }
 
-    avg(math, english) {
-      console.log((math + english) / 2)
+    judge(avg) {
+      let result;
+      if (60 <= avg) {
+        result = "passed";
+      } else {
+        result = "failed";
+      }
+      return result;
     }
   }
 
-  let a001 = new Student("Sato");    /* インスタンス,　クラス */
-  console.log(a001.name);
-  a001.avg(80, 70);                  /* メソッド */
+  let a001 = new Student("Sato");
+  let data = [70, 65, 50, 90, 30];
+  let avg = a001.cal_avg(data);
+  let result = a001.judge(avg);
 
-  let a002 = new Student("Tanaka");
-  console.log(a002.name);
-  a001.avg(20, 40);
+  console.log(data.length);
+  console.log(a001.name);
+  console.log(avg);
+  console.log(result);
+
     
   return (
     <div className="App">
