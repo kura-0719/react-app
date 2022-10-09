@@ -3,16 +3,31 @@ import './App.css';
 
 function App() {
 
-  const btn = document.getElementById("button");
+  // DOM
+const button =document.getElementById("addBtn");
+const lists = document.getElementById("lists");
 
-  btn.addEventListener("click",function() {
-    console.log("フォロー解除");
-  });
+// 関数（）
+async function getUsers() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await res.json();
+    return users;
+}
 
-  const foods = ["人参", "ジャガイモ", "玉ねぎ"];
-  foods.forEach(function(food) {
-    console.log(food);
-  });
+async function listUsers(){
+    const users = await getUsers();
+    users.forEach(addList);
+}
+
+function addList(user) {
+    const list = document.createElement("li");
+    list.innerText = user.name;
+    lists.appendChild(list);
+}
+
+// イベント
+window.addEventListener("load",listUsers);
+button.addEventListener("click",listUsers);
 
   return (
     <div className="App">
